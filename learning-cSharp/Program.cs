@@ -6,7 +6,7 @@ namespace learningcSharp
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("{0} {1}", byte.MinValue, byte.MaxValue);
         }
     }
 }
