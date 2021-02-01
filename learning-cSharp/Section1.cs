@@ -5,9 +5,9 @@ namespace learningcSharp
 {
     class Section1
     {
-        //LinkedIn Learning C# Section 1: Basics
-        public static void Main(string[] args)
-        {
+        ////LinkedIn Learning C# Section 1: Basics
+        //public static void Main(string[] args)
+        //{
             //    //Collections: List
 
             //    var studentNames = new List<string>();
@@ -166,6 +166,6 @@ namespace learningcSharp
             //{
             //    Console.WriteLine("Your zodiak sign is Libra.");
             //}
-        }
+        //}
     }
 }
