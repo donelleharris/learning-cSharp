@@ -1,10 +1,16 @@
 ﻿using System;
-namespace learningcSharp
+using System.Collections.Generic;
+using System.Text;
+
+namespace Util
 {
-    public class Console
+    class Console
     {
-        public Console()
+        static public string Ask(string question)
         {
+            System.Console.Write(question);
+            return System.Console.ReadLine();
+         
         }
     }
 }
