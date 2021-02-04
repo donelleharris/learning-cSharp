@@ -15,27 +15,38 @@ namespace learningcSharp
 
             while (adding)
             {
-                var newStudent = new Student();
-
-                newStudent.Name = Util.Console.Ask("Student name: ");
-
-                newStudent.Grade = int.Parse(Util.Console.Ask("Student grade: "));
-
-                newStudent.Birthday = Util.Console.Ask("Student birthday: ");
-
-                newStudent.Address = Util.Console.Ask("Student address: ");
-
-                newStudent.Phone = int.Parse(Util.Console.Ask("Student phone number: "));
-               
-                students.Add(newStudent); 
-                Student.Count++;
-
-                System.Console.WriteLine("Student Count: {0}", Student.Count);
-
-                System.Console.WriteLine("Add another ? y/n");
-                if (System.Console.ReadLine() != "y")
+                try
                 {
-                    adding = false;
+                    var newStudent = new Student();
+
+                    newStudent.Name = Util.Console.Ask("Student name: ");
+
+                    newStudent.Grade = Util.Console.AskInt("Student grade: ");
+
+                    newStudent.Birthday = Util.Console.Ask("Student birthday: ");
+
+                    newStudent.Address = Util.Console.Ask("Student address: ");
+
+                    newStudent.Phone = Util.Console.AskInt("Student phone number: ");
+
+                    students.Add(newStudent);
+                    Student.Count++;
+
+                    System.Console.WriteLine("Student Count: {0}", Student.Count);
+
+                    System.Console.WriteLine("Add another ? y/n");
+                    if (System.Console.ReadLine() != "y")
+                    {
+                        adding = false;
+                    }
+                }
+                catch (FormatException msg)
+                {
+                    System.Console.WriteLine(msg.Message);
+                }
+                catch (Exception)
+                {
+                    System.Console.WriteLine("Error adding student. Please try again.");
                 }
             }
 
